@@ -9,8 +9,8 @@ const App = () => {
 		<>
 			<main>
 				<ProfileCard />
-				{activityData.map((activity) => {
-					return <DetailCard {...activity} />;
+				{activityData.map((activity, i) => {
+					return <DetailCard key={i} class={`detail-card-${i + 1}`} {...activity} />;
 				})}
 			</main>
 		</>
