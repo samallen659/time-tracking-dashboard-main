@@ -1,10 +1,19 @@
+import DetailCard from "./components/DetailCard";
+import ProfileCard from "./components/ProfileCard";
 import "./styles/scss/styles.scss";
+
+const activityData = require("./data.json");
 
 const App = () => {
 	return (
-		<div>
-			<h1 className='title'>Hello World!</h1>
-		</div>
+		<>
+			<main>
+				<ProfileCard />
+				{activityData.map((activity) => {
+					return <DetailCard {...activity} />;
+				})}
+			</main>
+		</>
 	);
 };
 
